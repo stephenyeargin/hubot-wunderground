@@ -1,4 +1,4 @@
-# hubot-wunderground
+# Hubot Weather Underground [![Build Status](https://travis-ci.org/stephenyeargin/hubot-wunderground.svg?branch=master)](https://travis-ci.org/stephenyeargin/hubot-wunderground)
 
 Get the latest weather from Weather Underground
 
