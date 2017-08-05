@@ -1,0 +1,14 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "radar": 1
+  }
+	}
+		,	"radar": {
+		"image_url":"http://resize.wunderground.com/cgi-bin/resize_convert?ox=gif&url=radblast/cgi-bin/radar/WUNIDS_composite%3Fcenterlat=36.16999817%26centerlon=-86.77999878%26radius=75%26newmaps=1%26smooth=1%26reproj.automerc=1%26api_key=foobarbaz123456",
+		"url":"http://www.wunderground.com/radar/radblast.asp?ID=OHX&region=c4&lat=36.16999817&lon=-86.77999878"
+	}
+}
