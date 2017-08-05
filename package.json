@@ -1,7 +1,7 @@
 {
   "name": "hubot-wunderground",
   "description": "Get the latest weather from Weather Underground",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Stephen Yeargin <stephen@yearg.in>",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts, weather underground, weather, wunderground",
