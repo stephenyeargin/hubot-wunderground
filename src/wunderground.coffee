@@ -93,10 +93,12 @@ send_forecast = (msg, location, data) ->
   useMetric = process.env.HUBOT_WUNDERGROUND_USE_METRIC?
   msg.send "#{report.title} in #{location}: #{if useMetric then report.fcttext_metric else report.fcttext} (#{formatted_ttl data})"
 send_radar = (msg, location, data) ->
-  msg.send "#{data.radar.image_url}.png"
+  image_url = remove_api_key(data.radar.image_url)
+  msg.send "#{image_url}.png"
 
 send_satellite = (msg, location, data) ->
-  msg.send "#{data.satellite.image_url}.png"
+  image_url = remove_api_key(data.satellite.image_url)
+  msg.send "#{image_url}.png"
 
 send_webcam = (msg, location, data) ->
   cam = msg.random data.webcams
@@ -105,6 +107,10 @@ send_webcam = (msg, location, data) ->
     msg.send "#{cam.CURRENTIMAGEURL}.png"
   else
     msg.send "No webcams near #{location}. (#{formatted_ttl data})"
+
+# Response contains API key, which we don't want users to see
+remove_api_key = (url) ->
+  url.replace("api_key=#{process.env.HUBOT_WUNDERGROUND_API_KEY}", '_render=image')
 
 # quick normalization to reduce caching of redundant data
 key_for = (service, query) ->
