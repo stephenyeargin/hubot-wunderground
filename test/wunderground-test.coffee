@@ -39,7 +39,7 @@ describe 'wunderground', ->
     @room.destroy()
 
   # Test case
-  it 'returns an ambigious weather result', (done) ->
+  it 'returns an ambigious weather result', () ->
     selfRoom = @room
     testPromise = new Promise (resolve, reject) ->
       selfRoom.user.say('alice', '@hubot weather in nashville')
@@ -48,18 +48,13 @@ describe 'wunderground', ->
       , 1000)
 
     testPromise.then ((result) ->
-      try
-        expect(selfRoom.messages).to.eql [
-          ['alice', '@hubot weather in nashville']
-          ['hubot', "Possible matches for 'nashville'.\n - AR/Nashville\n - GA/Nashville\n - IL/Nashville\n - IN/Nashville\n - KS/Nashville\n - MI/Nashville\n - NC/Nashville\n - NY/Nashville\n - OH/Nashville\n - PA/Nashville\n - TN/Nashville\n - VT/Nashville"]
-        ]
-        done()
-      catch err
-        done err
-      return
-    ), done
+      expect(selfRoom.messages).to.eql [
+        ['alice', '@hubot weather in nashville']
+        ['hubot', "Possible matches for 'nashville'.\n - AR/Nashville\n - GA/Nashville\n - IL/Nashville\n - IN/Nashville\n - KS/Nashville\n - MI/Nashville\n - NC/Nashville\n - NY/Nashville\n - OH/Nashville\n - PA/Nashville\n - TN/Nashville\n - VT/Nashville"]
+      ]
+    )
 
-  it 'returns a weather forecast', (done) ->
+  it 'returns a weather forecast', () ->
     selfRoom = @room
     testPromise = new Promise (resolve, reject) ->
       selfRoom.user.say('alice', '@hubot weather in nashville tn')
@@ -68,18 +63,13 @@ describe 'wunderground', ->
       , 1000)
 
     testPromise.then ((result) ->
-      try
-        expect(selfRoom.messages).to.eql [
-          ['alice', '@hubot weather in nashville tn']
-          ['hubot',  'Friday in nashville tn: Clear. Lows overnight in the low 60s. (7199)']
-        ]
-        done()
-      catch err
-        done err
-      return
-    ), done
+      expect(selfRoom.messages).to.eql [
+        ['alice', '@hubot weather in nashville tn']
+        ['hubot',  'Friday in nashville tn: Clear. Lows overnight in the low 60s. (7199)']
+      ]
+    )
 
-  it 'returns a weather radar', (done) ->
+  it 'returns a weather radar', () ->
     selfRoom = @room
     testPromise = new Promise (resolve, reject) ->
       selfRoom.user.say('alice', '@hubot radar in nashville tn')
@@ -88,18 +78,13 @@ describe 'wunderground', ->
       , 1000)
 
     testPromise.then ((result) ->
-      try
-        expect(selfRoom.messages).to.eql [
-          ['alice', '@hubot radar in nashville tn']
-          ['hubot',  'http://resize.wunderground.com/cgi-bin/resize_convert?ox=gif&url=radblast/cgi-bin/radar/WUNIDS_composite%3Fcenterlat=36.16999817%26centerlon=-86.77999878%26radius=75%26newmaps=1%26smooth=1%26reproj.automerc=1%26_render=image.png']
-        ]
-        done()
-      catch err
-        done err
-      return
-    ), done
+      expect(selfRoom.messages).to.eql [
+        ['alice', '@hubot radar in nashville tn']
+        ['hubot',  'http://resize.wunderground.com/cgi-bin/resize_convert?ox=gif&url=radblast/cgi-bin/radar/WUNIDS_composite%3Fcenterlat=36.16999817%26centerlon=-86.77999878%26radius=75%26newmaps=1%26smooth=1%26reproj.automerc=1%26_render=image.png']
+      ]
+    )
 
-  it 'returns a weather satellite', (done) ->
+  it 'returns a weather satellite', () ->
     selfRoom = @room
     testPromise = new Promise (resolve, reject) ->
       selfRoom.user.say('alice', '@hubot satellite in nashville tn')
@@ -108,13 +93,8 @@ describe 'wunderground', ->
       , 1000)
 
     testPromise.then ((result) ->
-      try
-        expect(selfRoom.messages).to.eql [
-          ['alice', '@hubot satellite in nashville tn']
-          ['hubot',  'http://wublast.wunderground.com/cgi-bin/WUBLAST?lat=36.16999817&lon=-86.77999878&radius=75&width=300&height=300&key=sat_ir4_thumb&gtt=0&extension=png&proj=me&num=1&delay=25&timelabel=0&basemap=1&borders=1&theme=WUBLAST_WORLD&rand=1501902218&_render=image.png']
-        ]
-        done()
-      catch err
-        done err
-      return
-    ), done
+      expect(selfRoom.messages).to.eql [
+        ['alice', '@hubot satellite in nashville tn']
+        ['hubot',  'http://wublast.wunderground.com/cgi-bin/WUBLAST?lat=36.16999817&lon=-86.77999878&radius=75&width=300&height=300&key=sat_ir4_thumb&gtt=0&extension=png&proj=me&num=1&delay=25&timelabel=0&basemap=1&borders=1&theme=WUBLAST_WORLD&rand=1501902218&_render=image.png']
+      ]
+    )
