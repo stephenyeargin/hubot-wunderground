@@ -1,8 +1,5 @@
-# Description:
-#   None
-#
-# Dependencies:
-#   None
+# Description
+#   Get the latest weather from Weather Underground
 #
 # Configuration:
 #   HUBOT_WUNDERGROUND_API_KEY Sign up at http://www.wunderground.com/weather/api/.

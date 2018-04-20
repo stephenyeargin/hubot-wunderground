@@ -1,10 +1,19 @@
-# Hubot Weather Underground [![Build Status](https://travis-ci.org/stephenyeargin/hubot-wunderground.svg?branch=master)](https://travis-ci.org/stephenyeargin/hubot-wunderground)
+# Hubot Weather Underground 
+
+[![npm version](https://badge.fury.io/js/hubot-wunderground.svg)](http://badge.fury.io/js/hubot-wunderground) [![Build Status](https://travis-ci.org/stephenyeargin/hubot-wunderground.png)](https://travis-ci.org/stephenyeargin/hubot-wunderground)
 
 Get the latest weather from Weather Underground
 
 See [`src/wunderground.coffee`](src/wunderground.coffee) for full documentation.
 
 [Original work](https://github.com/github/hubot-scripts/blob/master/src/scripts/wunderground.coffee) by @alexdean and others.
+
+## Configuration
+
+| Configuration Variable           | Required? | Description                   |
+| -------------------------------- | :-------: | ----------------------------- |
+| `HUBOT_WUNDERGROUND_API_KEY`     | Yes       | API key from Wunderground     |
+| `HUBOT_WUNDERGROUND_USE_METRIC`  | No        | Set to any value to use Celsius |
 
 ## Installation
 
